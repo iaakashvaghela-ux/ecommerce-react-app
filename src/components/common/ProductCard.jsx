@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { MyGlobalContext } from "../pages/MainContext";
 import { useContext, useEffect } from "react";

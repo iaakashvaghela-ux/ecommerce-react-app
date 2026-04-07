@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { MdLocalOffer, MdSecurity } from "react-icons/md";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 
 export default function ProductDetails() {

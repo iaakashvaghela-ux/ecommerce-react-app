@@ -4,7 +4,7 @@ import { FaFilter, FaMinus, FaPlus } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RxDashboard } from "react-icons/rx";
 import ProductCard from "../common/ProductCard";
-import Home from "./Home";
+
 import TripleLoader from "./TripleLoader";
 import EmptyState from "./EmptyState";
 import ResponsivePagination from 'react-responsive-pagination';

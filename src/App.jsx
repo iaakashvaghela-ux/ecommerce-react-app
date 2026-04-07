@@ -7,7 +7,7 @@ import About from "./components/pages/About";
 import Products from "./components/pages/Products";
 import Cart from "./components/common/Cart";
 import ProductDetails from "./components/pages/ProductDetails";
-import Tostify from "./components/pages/tostify";
+import Tostify from "./components/pages/Tostify";
 
 export default function App() {
   return (
