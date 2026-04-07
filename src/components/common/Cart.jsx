@@ -22,7 +22,29 @@ export default function Cart() {
     settotalPrice(total)
   }, [cart])
 
-  
+  let removeToCart = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Done!",
+          text: "Removed successfully",
+          icon: "success"
+        });
+
+        setCart(prev => prev.filter((product) => product.id !== id))
+
+      }
+    });
+
+  }
 
 
   return (
@@ -74,29 +96,7 @@ export default function Cart() {
                           </button>
                           <button
 
-                            onClick={() => {
-                              Swal.fire({
-                                title: "Are you sure?",
-                                text: "You won't be able to revert this!",
-                                icon: "warning",
-                                showCancelButton: true,
-                                confirmButtonColor: "#3085d6",
-                                cancelButtonColor: "#d33",
-                                confirmButtonText: "Yes, delete it!"
-                              }).then((result) => {
-                                if (result.isConfirmed) {
-                                  Swal.fire({
-                                    title: "Done!",
-                                    text: "Removed successfully",
-                                    icon: "success"
-                                  });
-
-                                  setCart(prev => prev.filter((_, idx) => idx !== i))
-
-                                }
-                              });
-
-                            }}
+                            onClick={()=> removeToCart(Product.id)}
 
                             className="text-sm font-medium text-red-600 hover:underline dark:text-red-500 flex items-center gap-1">
                             <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { MyGlobalContext } from "../pages/MainContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
@@ -30,6 +30,8 @@ export default function ProductCard({ product }) {
   ///////////////////////////////useContexts////////////////////////////////
 
   const { cart, setCart } = useContext(MyGlobalContext)
+  
+ 
 
 
   let addToCart = () => {
@@ -87,8 +89,11 @@ export default function ProductCard({ product }) {
   let addRemovecart = cart.find((obj) => obj.id == id)
 
 
+ useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-  console.log(cart);
+ 
 
   return (
     
